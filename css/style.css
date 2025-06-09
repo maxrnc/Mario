@@ -1,3 +1,16 @@
+:root{
+    --pipe-speed: 3s;
+    --clounds-speed: 20s;
+    --cor-chao: rgb(35, 160, 35);
+    --cor-1-gradient: #87ceeb;
+    --cor-2-gradient: #e0f6ff;
+    --fonte-pont: 'New Super Mario Font U', sans-serif;
+    --cor-contorno: black;
+    --cor-fonte-pontuacao: white;
+    --cor-fonte-new-game: red;
+    --cor-sombra: rgba(0, 0, 0, 0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +20,11 @@
 .game-board{
     width: 100%;
     height: 500px;
-    border-bottom: 15px solid rgb(35, 160, 35);
+    border-bottom: 15px solid var(--cor-chao);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87ceeb, #e0f6ff);
+    background: linear-gradient(var(--cor-1-gradient) ,var(--cor-2-gradient));
 }
 
 .pipe{
@@ -19,7 +32,7 @@
     bottom: 0;
     width: 80px;
     right: -100px;
-    animation: pipe-animation 3s infinite linear;
+    animation: pipe-animation var(--pipe-speed) infinite linear;
 }
 
 .mario{
@@ -35,21 +48,31 @@
 
 .clouds {
     position: absolute;
+    top: 1em;
     width: 550px;
-    animation: clouds-animation 20s infinite linear;
-    z-index: 2;
+    animation: clouds-animation var(--clounds-speed) infinite linear;
 }
 
-#pontuacao{
+#pontuacao {
     position: absolute;
-    z-index: 4;
     right: 5px;
+    font-family: var(--fonte-pont);
+    color: var(--cor-fonte-pontuacao);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--cor-contorno);
+    font-size: 30px;
+    text-align: center;
 }
 
-#contador_moedas{
+#new-game{
     position: absolute;
-    z-index: 4;
-    right: 5px;
+    display: flex;
+    top: 20%;
+    right: 50%;
+    font-family: var(--fonte-pont);
+    font-size: 30px;
+    color: var(--cor-fonte-new-game);
+    box-shadow: 2px 2px 5px var(--cor-sombra);
 }
 
 @keyframes pipe-animation {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Mario</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.cdnfonts.com/css/new-super-mario-font-u" rel="stylesheet">
 </head>
 <body>
 
@@ -12,19 +13,13 @@
         <img src="img/clouds.png" alt="nuvens" class="clouds">
         <img src="img/mario.gif" alt="mario" class="mario">
         <img src="img/pipe.png" alt="pipe" class="pipe">
-        <h3 id="pontuacao">Pontuação: 0000</h3><br>
-        <h3 id="contador_moedas">Moedas: 000</h3>
+        <h3 id="pontuacao">Pontuação:<br>0</h3>
+        <audio src="mp3/Super Mario da Pisadinha (Ariel Skinny Remix).mp3" alt="Música de fundo" id="mp3" autoplay loop></audio>
+        <audio src="mp3/pulo.mp3" alt="Som de Pulo" id="pulo_sound"></audio>
     </div>
+
+    <button onclick="location.reload()" id="new-game" style="visibility: hidden;">New Game</button>
     
 </body>
 <script src="js/script.js"></script>
 </html> 
-
-
-<!--Lista para ser implementada
-
-1- Contador
-2- Mudar a velocidade a cada 10 acertos
-3- Colocar moedas
-
--->
